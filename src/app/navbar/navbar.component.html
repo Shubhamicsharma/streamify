@@ -1,0 +1,80 @@
+<div class="position-relative">
+  <nav class="px-5 py-2 position-absolute d-flex w-100 justify-content-between align-items-center">
+    <div class="logo d-flex  align-items-center" routerLink="/home">
+      <img src="../../assets/logo.png" width="75" alt="">
+      <h5 class="m-0">Streamify</h5>
+    </div>
+    <div>
+      <ul class="d-flex gap-3 align-items-center m-0">
+        <li class="dropbtn" routerLink="/home" style="cursor: pointer;">Home</li>
+        <li>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categories <i class="fa-solid fa-chevron-down fa-2xs ms-2"></i>
+            </button>
+            <ul class="dropdown-menu px-5">
+              <h2 class="mb-4 ms-5 text-white">Explore Categories</h2>
+              <div class="container w-100 d-flex justify-content-between gap-3">
+                <div *ngFor="let category of categories" [style.background-image] = "category.imgLink" (click)="navigateToCategory(category.categoryName)">
+                  <h6>{{category.categoryName}}</h6>
+                  <p>8 Documentaries</p>
+                </div>
+              </div>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Documentaries <i class="fa-solid fa-chevron-down fa-2xs ms-2"></i>
+            </button>
+            <ul class="dropdown-menu">
+              <div id="explore-documentaries" class="popular-documentaries px-5" >
+                <h2 class="mb-4 ms-5 text-white">Popular Documentaries</h2>
+                <div class="categories w-100 d-flex justify-content-between flex-wrap container">
+
+                  <div class="category mb-0" *ngFor="let documentary of popularDocumentaries" data-aos="fade-up" [attr.data-aos-delay] = "documentary.delay" (click)="navigateToDocumentary(documentary.queryParams)">
+                    <div class="img-container" [style.background-image]="documentary.imgLink"></div>
+                    <h5 class="category-title">{{documentary.title}}</h5>
+                    <p class="category-desc fs-6">{{documentary.year}} <span class="mx-3" style="letter-spacing: -3px;">----------</span> {{documentary.duration}}</p>
+                  </div>
+                </div>
+              </div>
+            </ul>
+          </div>
+        </li>
+        <li *ngIf="logoutViewer"><Button class="rounded-circle gray-background" routerLink="/user-account"><i class="fa-regular fa-user m-2"></i></Button></li>
+        <li><button type="button" class="btn btn-primary rounded-pill px-3 gray-background" routerLink="/contact-us" >Contact</button></li>
+        <li *ngIf="loginViewer"><button type="button" class="btn btn-primary gray-background rounded-pill px-3" routerLink="/login">Login</button></li>
+        <li *ngIf="logoutViewer"><button type="button" class="btn btn-primary gray-background rounded-pill px-3" (click)="onLogout()" >Logout</button></li>
+        <li *ngIf="subscribeBtnViewer"><button type="button" class="btn btn-primary rounded-pill px-3 gray-background" routerLink="/subscribe" >Subscribe</button></li>
+        <li *ngIf="premiumUser"><button class="btn btn-primary rounded-pill px-3 gray-background premium-btn"  data-toggle="tooltip" title="View Benefits" (click)="viewBenefits()"><i class="fa-regular fa-star"></i> Premium</button></li>
+      </ul>
+    </div>
+  </nav>
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="confirmLogout" tabindex="-1" aria-labelledby="confirmLogoutLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-4" id="confirmLogoutLabel">Confirm Logout</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body fs-5">
+        Are you sure you want to logout?
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" (click)="onConfirmLogout()" routerLink="/home">Confirm Logout</button> -->
+
+        <div class="btn-container d-flex gap-3">
+          <button type="button" data-bs-dismiss="modal" class=" px-4 py-2 fs-5" routerLink="/home">Close</button>
+          <button class=" px-4 py-2 fs-5" (click)="onConfirmLogout()" routerLink="/home">Confirm Logout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

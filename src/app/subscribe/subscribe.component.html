@@ -1,0 +1,54 @@
+<app-navbar></app-navbar>
+
+<div class="subscribe-container">
+  <div class="subscribe d-flex align-items-center justify-content-between">
+    <div class="subscribe-text w-50">
+      <h6 data-aos = "fade-right">UNLIMITED ANIMALS DOCUMENTARIES</h6>
+      <h1 data-aos = "fade-right" data-aos-delay="100">Get Streamify subscription today</h1>
+
+      <div class="d-flex align-items-center" data-aos = "fade-right" data-aos-delay="200">
+        <i class="fa-solid fa-film fa-2xl me-4"></i>
+        <div>
+          <h3>More than 1,500+ documentaries</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit tortor eu egestas morbi sem vulputate etiam facilis.</p>
+        </div>
+      </div>
+      <div class="d-flex align-items-center" data-aos = "fade-right" data-aos-delay="300">
+        <i class="fa-solid fa-film fa-2xl me-4"></i>
+        <div>
+          <h3>More than 1,500+ documentaries</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit tortor eu egestas morbi sem vulputate etiam facilis.</p>
+        </div>
+      </div>
+      <div class="d-flex align-items-center" data-aos = "fade-right" data-aos-delay="400">
+        <i class="fa-solid fa-desktop fa-2xl me-4"></i>
+        <div>
+          <h3>Available in all your devices</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit tortor eu egestas morbi sem vulputate etiam facilis.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="login-container price-box w-50">
+      <div class="login-box text-center mb-5">
+
+        <h1 data-aos = "fade-left">$9.99</h1>
+        <h4 data-aos = "fade-left" data-aos-delay="100">One Time payment</h4>
+        <p data-aos = "fade-left" data-aos-delay="200">Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum egestas</p>
+
+        <div class="details d-flex flex-wrap justify-content-between align-items-center fs-5" data-aos = "fade-left" data-aos-delay="300">
+          <div class="mb-4"><i class="fa-regular fa-clock"></i> Unlimited Access</div>
+          <div class="mb-4"><i class="fa-solid fa-laptop"></i> Available in All Platforms</div>
+          <div class="mb-4"><i class="fa-regular fa-star"></i> Exclusive Content</div>
+          <div class="mb-4"><i class="fa-solid fa-download"></i> Downloadable Content</div>
+          <div class="mb-4"><i class="fa-regular fa-calendar"></i> Content Every Week</div>
+          <div class="mb-4"><i class="fa-solid fa-music"></i> Best Audio Quality</div>
+        </div>
+
+        <button class="py-3 w-100 rounded-pill" (click)="onSubscribe()" *ngIf="!isSubscribed" data-aos = "fade-left" data-aos-delay="400">Subscribe Now</button>
+        <button class="py-3 w-100 rounded-pill" (click)="onSubscribe()" *ngIf="isSubscribed" data-aos = "fade-left" data-aos-delay="400">Enjoy Watching!</button>
+
+      </div>
+    </div>
+  </div>
+</div>

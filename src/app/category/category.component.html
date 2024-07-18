@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+
+<div class="parent-container">
+  <div class="banner" [style.background-image]="bannerImgURL">
+    <div class="gradient"></div>
+    <div class="txt">
+      <h6 data-aos = "fade-right">POPULAR ON {{categoryName}} DOCUMENTARIES</h6>
+      <h1 data-aos = "fade-right" data-aos-delay="100">{{categoryTitle}}</h1>
+      <p data-aos = "fade-right" data-aos-delay="200" class="fs-5">{{categoryDesc}}</p>
+      <div class="btn-container" data-aos = "fade-right" data-aos-delay="300">
+        <button class="px-4 py-3 fs-5 rounded-pill me-3" (click)="watchNow()">Watch Now</button>
+        <button class="px-4 py-3 fs-5 rounded-pill me-3" id="playButton" (click)="watchTrailer()">Watch Trailer</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="more-documentaries">
+    <h2 data-aos = "fade-right">More {{categoryName}} Documentaries</h2>
+
+    <div class="categories d-flex justify-content-between flex-wrap">
+      <div class="category" *ngFor="let item of contentObj[currentCategory].moreContent" (click)="navigateToDocumentary(item.queryParams)" data-aos = "fade-up" [attr.data-aos-delay]="100 * + item.queryParams.idx">
+
+        <div class="img-container" [style.background-image]= "item.imgLink"></div>
+        <h4 class="category-title">{{item.title}}</h4>
+        <p class="category-desc fs-6">{{item.year}} <span class="mx-3" style="letter-spacing: -3px;">----------</span> {{item.duration}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="overlay" class="overlay" (click)="play($event)">
+  <div class="overlay-content">
+    <span id="closeButton" class="close-button" (click)="closePlayer()">&times;</span>
+    <iframe id="youtubePlayer" width="100%" height="100%" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+

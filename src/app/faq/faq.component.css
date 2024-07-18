@@ -1,0 +1,77 @@
+.accordion-button:not(.collapsed) {
+  background: none !important;
+  color: white;
+  box-shadow: none;
+  background-image: none;
+}
+
+.accordion {
+  /* background: none !important; */
+  color: white;
+  --bs-accordion-bg : none;
+  --bs-accordion-background-color : white;
+  --bs-accordion-btn-icon-transform : rotate(90deg);
+  border-color: white !important;
+  width: 60%;
+
+}
+
+.accordion-item {
+  color: white !important;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  border: 1px solid white;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+.accordion-item:hover{
+  transform: scale(0.95);
+  -webkit-transform: scale(0.95);
+  -moz-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  -o-transform: scale(0.95);
+}
+
+.accordion-item:has(.accordion-button:not(.collapsed)){
+  background-color: #2f2f2f;
+}
+
+.accordion-button {
+  color: white !important;
+  outline: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.accordion-button:focus{
+  box-shadow: none !important;
+}
+
+.accordion-button::after {
+    background-image: url(../../assets/plus-solid.svg);
+    background-position: center;
+    padding: 1.5rem;
+    border: none;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+    background-color: #2f2f2f;
+}
+
+.accordion-button:not(.collapsed)::after
+ {
+  background-image: url(../../assets//xmark-solid.svg);
+  background-color: rgb(10, 113, 253);
+
+ }

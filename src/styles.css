@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  background-color: black;
+  color: white;
+  position: relative;
+}
+
+/* Stop background scrolling when overlay is visible */
+body.no-scroll {
+  overflow: hidden;
+}

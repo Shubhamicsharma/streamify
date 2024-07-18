@@ -1,0 +1,56 @@
+<app-navbar></app-navbar>
+
+<div class="parent-container w-100 d-flex flex-column gap-5 justify-content-center align-items-center">
+  <div class="box">
+    <h3>My Account</h3>
+
+    <hr>
+
+    <label for="name">Name</label>
+    <input class="rounded-pill p-4 py-3 w-100 " type="text" id="name" [(ngModel)]="currentUser.name">
+
+    <label for="email">Email</label>
+    <input class="rounded-pill p-4 py-3 w-100 " type="text" id="email" [value]="currentUser.username" disabled>
+
+    <button class="py-3 w-100 rounded-pill mt-3" (click)="updateName()">Save Changes</button>
+  </div>
+
+  <div class="box">
+    <h3>My Subscriptions</h3>
+
+    <hr>
+
+    <div *ngIf="currentUser.isSubscribed" class="d-flex justify-content-start gap-3 align-items-center">
+      <img src="../../assets/premium.png" height="150" alt="">
+      <div>
+        <h6>Thank you for being a premium member!</h6>
+        <button class="py-3 w-100 rounded-pill mt-3" routerLink = "/subscribe">View Benefits!</button>
+      </div>
+    </div>
+    <div *ngIf="!currentUser.isSubscribed">
+      <h4>No Subscription</h4>
+      <p>Don't miss out! Subscribe today for premium access and special benefits</p>
+      <button class="py-3 w-100 rounded-pill mt-3" routerLink = "/subscribe">Subscribe Now</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="confirmSave" tabindex="-1" aria-labelledby="confirmSaveLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-4" id="confirmSaveLabel">Changes Saved Successfully</h1>
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" (click)="onConfirmLogout()" routerLink="/home">Confirm Logout</button> -->
+
+        <div class="btn-container d-flex gap-3">
+          <button type="button" data-bs-dismiss="modal" class="rounded-pill px-4 py-2 fs-5">Okay</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+
+<div class="login-container">
+  <div class="login-box text-center">
+    <i class="fa-solid fa-lock fa-2xl"></i>
+    <h1 data-aos = "fade-right">Log in to your account</h1>
+    <p data-aos = "fade-right" data-aos-delay="100">Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum egestas</p>
+    <input class="rounded-pill p-4 py-3 w-100 " type="text" id="username" placeholder="example@yourmail.com" [(ngModel)]="username" name="username" data-aos = "fade-right" data-aos-delay="200">
+    <div class="w-100 position-relative" data-aos = "fade-right" data-aos-delay="300">
+        <input class="rounded-pill p-4 py-3 w-100 " type="password" id="password" placeholder="Password" [(ngModel)]="password" name="password">
+        <button class="eye-button" (click)="showPassword()" *ngIf="showPasswordIcon"><i class="fa-solid fa-eye"></i></button>
+        <button class="eye-button" (click)="showPassword()" *ngIf="hidePasswordIcon"><i class="fa-solid fa-eye-slash"></i></button>
+    </div>
+
+    <p class="text-danger m-0" *ngIf="warningViewer" data-aos = "fade-right">{{warningText}}</p>
+
+    <div class="checkbox-wrapper-46" data-aos = "fade-right" data-aos-delay="400">
+      <input type="checkbox" id="cbx-46" class="inp-cbx" (click)="onRememberMe($event)" />
+      <label for="cbx-46" class="cbx"
+        ><span>
+          <svg viewBox="0 0 12 10" height="10px" width="12px">
+            <polyline points="1.5 6 4.5 9 10.5 1"></polyline></svg></span
+        ><span>Remember Me</span>
+      </label>
+    </div>
+
+    <button class="py-3 w-100 rounded-pill" (click)="onLogin()" data-aos = "fade-right" data-aos-delay="500">Login</button>
+
+    <p class="link m-0" data-aos = "fade-right" data-aos-delay="600"><u>Forget Your Password?</u></p>
+    <p class="text-secondary" data-aos = "fade-right" data-aos-delay="700">You don’t have an account? <span class="link" routerLink="/signup"><u>Sign Up</u></span></p>
+  </div>
+</div>

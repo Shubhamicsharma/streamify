@@ -1,0 +1,80 @@
+<app-navbar></app-navbar>
+
+<div class="parent-container w-100 d-flex flex-column gap-3 justify-content-center align-items-center">
+  <h6 class="text-center" data-aos="fade-right">CONTACT</h6>
+  <h1 data-aos="fade-right" data-aos-delay="200">Get in touch with us</h1>
+  <p data-aos="fade-right" data-aos-delay="400" class="w-25 text-center">Lorem ipsum dolor sit amet consectetur adipiscing elit nulla adipiscing tincidunt interdum tellus du.
+
+  </p>
+  <div class="box mb-4">
+
+    <div class="d-flex gap-5 w-100">
+      <div class="w-50" data-aos="fade-right" data-aos-delay="600">
+        <label for="name" class="mb-3">Name</label>
+        <input class="rounded-pill p-4 py-3 w-100 " type="text" id="name" [(ngModel)]="name" placeholder="John Carter">
+      </div>
+
+      <div class="w-50" data-aos="fade-left" data-aos-delay="600">
+        <label for="email" class="mb-3">Email</label>
+        <input class="rounded-pill p-4 py-3 w-100 " type="text" id="email" [value]="email" placeholder="Email" placeholder="example@email.com">
+      </div>
+    </div>
+
+    <div class="d-flex gap-5 w-100">
+      <div class="w-50" data-aos="fade-right" data-aos-delay="800">
+        <label for="phone" class="mb-3">Phone</label>
+        <input class="rounded-pill p-4 py-3 w-100 " type="text" id="phone" [(ngModel)]="phoneNumber" placeholder="(123)456-789">
+      </div>
+
+      <div class="w-50" data-aos="fade-left" data-aos-delay="800">
+        <label for="subject" class="mb-3">Subject</label>
+        <input class="rounded-pill p-4 py-3 w-100 " type="text" id="subject" [value]="subject" placeholder="Support">
+      </div>
+    </div>
+
+    <div class="d-flex gap-5 w-100">
+      <div class="w-100" data-aos="fade-right" data-aos-delay="1000">
+        <label for="message" class="mb-3">Leave Us A Message</label>
+        <!-- <input class="rounded-pill p-4 py-3 w-100 " type="text" id="phone" [(ngModel)]="phoneNumber" placeholder="(123)456-789"> -->
+         <textarea name="Message" id="message" class="p-4 py-3 w-100 " rows="5" placeholder="Please type your message here..."></textarea>
+      </div>
+    </div>
+
+    <div class="w-100 d-flex justify-content-between align-items-center">
+      <button class="py-3 px-4 rounded-pill" data-aos="fade-right">Send Message</button>
+      <div class="icons-container d-flex gap-5" data-aos="fade-left">
+        <i class="icons fs-5 fa-brands fa-facebook-f"></i>
+        <i class="icons fs-5 fa-brands fa-twitter"></i>
+        <i class="icons fs-5 fa-brands fa-instagram"></i>
+        <i class="icons fs-5 fa-brands fa-youtube"></i>
+
+
+      </div>
+    </div>
+  </div>
+
+  <h3 data-aos="fade-up">Want to reach out directly?</h3>
+  <p data-aos="fade-up" class="w-25 text-center">Lorem ipsum dolor sit amet consectetur adipiscing elit nulla adipiscing tincidunt interdum tellus du.</p>
+
+  <div class="w-50 d-flex gap-3">
+    <div class="box d-flex flex-row justify-content-start align-items-center gap-4 px-5 py-4" data-aos="fade-right">
+      <i class="fa-regular fa-envelope fa-2xl"></i>
+      <div>
+        <h4>Email:</h4>
+        <h6>support&#64;streamify.com</h6>
+      </div>
+    </div>
+    <div class="box d-flex flex-row justify-content-start align-items-center gap-4 px-5 py-4" data-aos="fade-left">
+      <i class="fa-solid fa-phone fa-2xl"></i>
+      <div>
+        <h4>Phone:</h4>
+        <h6>+1(123) 456 -789</h6>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<hr class="mx-auto" style="width: 80%;">
+
+<app-faq></app-faq>

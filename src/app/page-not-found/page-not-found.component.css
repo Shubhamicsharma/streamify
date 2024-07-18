@@ -1,0 +1,114 @@
+.parent-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.parent-container .text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 50%;
+  overflow: hidden;
+}
+
+.error-code {
+  font-size: 15rem;
+  font-weight: 700;
+  letter-spacing: 15px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  opacity: 0.2;
+}
+
+.text-container {
+  width: 70%;
+  margin-left: 6rem;
+  margin-top: 6rem;
+}
+
+.text-container h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.btn-container button {
+  background: none;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 2rem;
+  border-radius: 10rem;
+  -webkit-border-radius: 10rem;
+  -moz-border-radius: 10rem;
+  -ms-border-radius: 10rem;
+  -o-border-radius: 10rem;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+.btn-container button:first-child {
+  background-color: rgb(10, 113, 253);
+}
+
+.btn-container button:first-child:hover {
+  background-color: white;
+  color: rgb(10, 113, 253);
+}
+
+.btn-container button:nth-child(2){
+  background-color: #2f2f2f;
+
+}
+
+.btn-container button:nth-child(2):hover {
+  background-color: rgb(10, 113, 253);
+}
+
+.vertical-image-container {
+  width: 33%;
+  overflow: hidden;
+}
+
+.img-container {
+  width: 100%;
+  min-height: 350px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  position: relative;
+}
+
+.img-container .gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgb(0,0,0);
+background: linear-gradient(180deg, rgba(0,0,0,0.24702380952380953) 0%, rgba(0,0,0,0.4907212885154062) 0%, rgba(0,0,0,0.560749299719888) 42%, rgba(0,0,0,0.7876400560224089) 73%, rgba(0,0,0,1) 89%);
+}
+
+.vertical-image-container:nth-child(odd) .img-container{
+  transform: translateY(-50px);
+  -webkit-transform: translateY(-50px);
+  -moz-transform: translateY(-50px);
+  -ms-transform: translateY(-50px);
+  -o-transform: translateY(-50px);
+}

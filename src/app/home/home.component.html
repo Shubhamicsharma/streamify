@@ -1,0 +1,116 @@
+<app-navbar></app-navbar>
+
+<div class="home-container">
+  <div class="banner">
+    <div class="banner-text" data-aos="fade-right" data-aos-duration="1500">
+      <h1>Unlimited Animal Documentaries in 4K</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit massa a netus elit cursus eget viverra vitae risus nunc facilisis feugiat.</p>
+      <div class="btn-container d-flex gap-5">
+        <button type="button" class="btn btn-primary rounded-pill fs-5 px-4 py-3" [routerLink]="currentUser.isSubscribed ? '/home' : '/subscribe'">{{subscribeTxt}}</button>
+        <a href="home#explore-documentaries"><button type="button" class="btn btn-secondary rounded-pill fs-5 px-4 py-3">Explore Documentaries</button></a>
+
+      </div>
+    </div>
+    <div class="banner-img-container w-50">
+      <!-- <img src="../../assets/banner.png" alt="" class="banner-img"> -->
+       <div class="banner-gradient"></div>
+    </div>
+  </div>
+
+  <!-- Explore By Category -->
+
+  <div  class="category-container p-5">
+    <h2 class="mb-4">Explore By Category</h2>
+    <div class="categories d-flex justify-content-between flex-wrap">
+      <div class="category" *ngFor="let category of categories" (click)="navigateToCategory(category.categoryName)" data-aos="fade-up" [attr.data-aos-delay] = "category.delay">
+        <img [src]="category.imgLink" alt="" [style]="category.style">
+        <h3 class="category-title" style="text-transform: capitalize;">{{category.categoryName}}</h3>
+        <p class="category-desc">8 Documentaries</p>
+      </div>
+    </div>
+  </div>
+
+    <!-- Popular Documentaries -->
+
+    <div id="explore-documentaries" class="popular-documentaries p-5" >
+      <h2 class="mb-4">Popular Documentaries</h2>
+      <div class="categories d-flex justify-content-between flex-wrap">
+
+        <div class="category" *ngFor="let documentary of popularDocumentaries" data-aos="fade-up" [attr.data-aos-delay] = "documentary.delay" (click)="navigateToDocumentary(documentary.queryParams)">
+          <div class="img-container" [style.background-image]="documentary.imgLink"></div>
+          <h4 class="category-title">{{documentary.title}}</h4>
+          <p class="category-desc fs-6">{{documentary.year}} <span class="mx-3" style="letter-spacing: -3px;">----------</span> {{documentary.duration}}</p>
+        </div>
+
+
+      </div>
+    </div>
+
+    <div id="latest-documentaries" class="popular-documentaries p-5" >
+      <h2 class="mb-4">Latest Documentaries</h2>
+      <div class="categories d-flex justify-content-between flex-wrap">
+
+        <div class="category" *ngFor="let documentary of latestDocumentaries" data-aos="fade-up" [attr.data-aos-delay] = "documentary.delay" (click)="navigateToDocumentary(documentary.queryParams)">
+          <div class="img-container" [style.background-image]="documentary.imgLink"></div>
+          <h4 class="category-title">{{documentary.title}}</h4>
+          <p class="category-desc fs-6">{{documentary.year}} <span class="mx-3" style="letter-spacing: -3px;">----------</span> {{documentary.duration}}</p>
+        </div>
+
+
+      </div>
+    </div>
+
+    <div class="enjoy-content d-flex mb-3">
+      <div class="txt d-flex justify-content-center align-items-center">
+        <div class="w-50 d-flex flex-column gap-3 me-5">
+          <h2 data-aos="fade-right">Enjoy your favorite documentaries for $9.99</h2>
+          <p data-aos="fade-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit quam tellus habitant vel elit donec euismod in.</p>
+          <p data-aos="fade-right"><i class="fa-solid fa-check me-2"></i> More than 1500 documentaries</p>
+          <p data-aos="fade-right"><i class="fa-solid fa-check me-2"></i> New content every week</p>
+          <p data-aos="fade-right"><i class="fa-solid fa-check me-2"></i> Content in 2K and 4K</p>
+          <button data-aos="fade-right" type="button" class="btn btn-primary rounded-pill fs-5 px-4 py-3 subscribe-btn" style="width: max-content;" [routerLink]="currentUser.isSubscribed ? '/home' : '/subscribe'">{{subscribeTxt}}</button>
+        </div>
+      </div>
+      <div class="img-container" style="background-image: url(../../assets/enjoyContent.png);"></div>
+    </div>
+
+    <div class="devices-container p-5">
+      <h1 class="text-center my-5" data-aos="fade-up">Available on all your devices</h1>
+      <div class="d-flex justify-content-center py-5 mb-5">
+        <div class="mx-5 d-flex flex-column justify-content-center align-items-center gap-5" data-aos="fade-up" >
+          <img src="../../assets/tv.svg" alt="">
+          <h4>TV's</h4>
+        </div>
+        <div class="mx-5 d-flex flex-column justify-content-center align-items-center gap-5" data-aos="fade-up" data-aos-delay="100" >
+          <img src="../../assets/laptop.svg" alt="">
+          <h4>Laptops & Computers</h4>
+        </div>
+        <div class="mx-5 d-flex flex-column justify-content-center align-items-center gap-5" data-aos="fade-up" data-aos-delay="200" >
+          <img src="../../assets/phone.svg" alt="">
+          <h4>Phones & Tablets</h4>
+        </div>
+        <div class="mx-5 d-flex flex-column justify-content-center align-items-center gap-5" data-aos="fade-up" data-aos-delay="300" >
+          <img src="../../assets/console.svg" alt="">
+          <h4>Consoles</h4>
+        </div>
+      </div>
+    </div>
+
+    <hr class="mx-auto" style="width: 80%;">
+
+    <app-faq></app-faq>
+
+    <div class="availability-container p-5 mt-3">
+      <h4 class="my-5 text-center" data-aos="fade-up">Available on every platform</h4>
+      <div class="platform-container mb-5">
+        <img src="../../assets/appStore.svg" alt="" data-aos="fade-up">
+        <img src="../../assets/googlePlay.svg" alt="" data-aos="fade-up" data-aos-delay="100">
+        <img src="../../assets/roku.svg" alt="" data-aos="fade-up" data-aos-delay="200">
+        <img src="../../assets/fireTV.svg" alt="" data-aos="fade-up" data-aos-delay="300">
+        <img src="../../assets/androidTV.svg" alt="" data-aos="fade-up" data-aos-delay="400">
+      </div>
+    </div>
+
+</div>
+
+

@@ -1,0 +1,86 @@
+.subscribe {
+  padding-top: 5rem;
+}
+
+.subscribe-text {
+  display: flex;
+  flex-direction: column;
+  gap : 2rem;
+  padding: 5rem;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  padding: 5rem;
+
+
+}
+
+.login-box {
+  background-color: #181818;
+  padding: 3rem 2rem;
+  width: 100%;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+input {
+  background-color: #2F2F2F;
+  color: white;
+  border: none;
+  outline: none;
+}
+
+input:focus {
+  background-color: rgb(69, 69, 69);
+}
+
+button {
+  border: none;
+  outline: none;
+  background-color: rgb(13, 110, 253);
+  color: white;
+  /*font-size: 1.25rem;
+  */font-weight: 600;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: white;
+  color: rgb(13, 110, 253);
+}
+
+.link {
+  cursor: pointer;
+  color: white;
+}
+
+.link:hover {
+  color: #b4b4b4;
+}
+
+.price-box h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+.price-box .login-box {
+  padding: 3rem;
+}
+
+.details > div {
+  width: 50%;
+  text-align: left;
+}

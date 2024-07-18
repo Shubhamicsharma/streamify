@@ -1,0 +1,30 @@
+<app-navbar></app-navbar>
+
+<div class="login-container">
+  <div class="login-box text-center mb-5">
+    <i class="fa-solid fa-lock fa-2xl"></i>
+    <h1 data-aos = "fade-right">Sign up to watch the greatest documentaries</h1>
+    <p data-aos = "fade-right" data-aos-delay="100">Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum egestas</p>
+
+    <input class="rounded-pill p-4 py-3 w-100 " type="text" id="name" placeholder="Full Name" [(ngModel)]="name" name="name" data-aos = "fade-right" data-aos-delay="200">
+    <input class="rounded-pill p-4 py-3 w-100 " type="email" id="username" placeholder="example@yourmail.com" [(ngModel)]="email" name="email" data-aos = "fade-right" data-aos-delay="300">
+
+    <div class="w-100 position-relative" data-aos = "fade-right" data-aos-delay="400">
+      <input class="rounded-pill p-4 py-3 w-100 " type="password" id="password" placeholder="Password" [(ngModel)]="password" name="password">
+      <button class="eye-button" (click)="showPassword()" *ngIf="showPasswordIcon"><i class="fa-solid fa-eye"></i></button>
+      <button class="eye-button" (click)="showPassword()" *ngIf="hidePasswordIcon"><i class="fa-solid fa-eye-slash"></i></button>
+    </div>
+
+    <div class="w-100 position-relative" data-aos = "fade-right" data-aos-delay="500">
+      <input class="rounded-pill p-4 py-3 w-100 " type="password" id="confirm-password" placeholder="Confirm Password" [(ngModel)]="confirmPassword" name="confirmPassword">
+      <button class="eye-button" (click)="showConfirmPassword()" ><i class="fa-solid fa-eye"></i></button>
+      <button class="eye-button" (click)="showConfirmPassword()" *ngIf="hideConfirmPasswordIcon"><i class="fa-solid fa-eye-slash"></i></button>
+    </div>
+
+    <p class="text-danger m-0" *ngIf="warningViewer" data-aos = "fade-right">{{warningText}}</p>
+
+    <button class="py-3 w-100 rounded-pill" (click)="onSignUp()" data-aos = "fade-right" data-aos-delay="600">SignUp</button>
+
+    <p class="text-secondary" data-aos = "fade-right">Already have an account? <span class="link" routerLink="/login"><u>Login</u></span></p>
+  </div>
+</div>
